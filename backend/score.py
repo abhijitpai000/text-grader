@@ -58,6 +58,7 @@ def _reading_ease(total_sentences, total_words, total_syllables):
                      "Easily understood by an average 11-year-old student. "
         elif fres > 100:
             remark = "&#128519 Very easy to read."
+
     return fres, remark
 
 
@@ -83,7 +84,7 @@ def compute_score(input_text):
              'total_sentences': total_sentences}
 
     # Readability Tests.
-    fres, remark = _reading_ease(total_sentences, total_words, total_syllables)
+    fres, remark_computed = _reading_ease(total_sentences, total_words, total_syllables)
     grade_score = _grade_level(total_sentences, total_words, total_syllables)
 
     # Fixing Negative Grade Scores.
@@ -92,7 +93,7 @@ def compute_score(input_text):
 
     # Response.
     scores = {'fres': round(fres, 2),
-              'remark': remark,
+              'remark': remark_computed,
               'grade_score': round(grade_score, 2)}
 
     return scores, stats
