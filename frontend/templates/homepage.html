@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Text Grader</title>
+    <!--Local Style Sheet-->
+    <link href="{{ url_for('static', path='/homepage_style.css') }}" rel="stylesheet">
+    <!--Work Sans Font-->
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Work+Sans:400,700" rel="stylesheet">
+    <!--Responsive-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        {% include 'homepage_client.js' %}
+    </script>
+    <!--Animation-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="heading">
+        <h1>Text Grader</h1>
+        <small style="font-size: medium;">Check readability of your text</small>
+    </div>
+    <div class="box">
+        <div class="report">
+            <button id="close-button">X</button>
+            <div class="report-text">
+                <h3>Report</h3>
+
+                <div id="report_readability">
+                    <h4 class="hide">
+                        <span class="text"><p id="remark"></p></span>
+                    </h4>
+                </div>
+                
+                <hr style="height: 2px;">
+                <div id="report_scores">
+                    <h4 class="hide">
+                        <span class="text">
+                            <ul>
+                                <li>Reading Ease Score<p id="fres"></p></li>
+                                <li>Grade Level Score<p id="grade"></p></li>
+                            </ul>
+                            <div>
+                            <ul id="info" style="font-weight: normal;">
+                                <li><small><i>Reading Ease Score ranges from 1 to 100, 100 for text easiest to read!</i></small></li>
+                                <li><small><i>Grade Level Score is based on US School Grades, Ex: 7 = 7th Grade</i></small></li>
+                            </ul>
+                            </div>
+                        </span>
+                    </h4>
+                </div>
+                <hr style="height: 2px;">
+                <div id="report_stats">
+                    <h4 class="hide">
+                        <span class="text">
+                            <ul id="stats_list">
+                                <li style="padding: 5px;">Words <p id="word_count"></p></li>
+                                <li style="padding: 5px;">Sentences <p id="sentence_count"></p></li>
+                                <li style="padding: 5px;">Syllables <p id="syllable_count"></p></li>
+                            </ul>
+                        </span>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <form>
+            <textarea type="text" id="input-text-box" placeholder="Enter text"></textarea>
+            <div id="submit-button-wrapper">
+                <button type="submit" id="submit-button">Grade Text</button>
+            </div>
+        </form>
+</div>
+</body>
+</html>
