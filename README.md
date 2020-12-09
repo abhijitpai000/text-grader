@@ -26,3 +26,29 @@ Flesch Grade Level test score:
 ![alt text](https://wikimedia.org/api/rest_v1/media/math/render/svg/8e68f5fc959d052d1123b85758065afecc4150c3)
 
 Readability Tests on [Wikipedia link](https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests)
+
+## Setup Instructions.
+
+1. Clone/Fork this repo
+
+2. Navigate to cloned path.
+
+3. Setup virtual envinorment.
+
+    `pip install virtualenv`
+
+    `virtualenv myenv`
+
+4. Activate it by running & Install project requirements.
+
+    `myenv/Scripts/activate`
+
+    `pip install -r requirements.txt`
+
+5. Start Fastapi Development Server
+
+    `uvicorn main:app --debug`
+    
+    or 
+    
+    `uvicorn main:app --reload`
